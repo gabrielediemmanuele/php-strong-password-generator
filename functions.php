@@ -10,7 +10,7 @@ function genPassword()
     $i = 1;
     /*creo una condizione.. */
     /*se gen-password viene attivato... */
-    if (isset($_GET['gen-password'])) {
+    if (isset($_GET['gen-password']) && $_GET['gen-password']) {
         /*lunghezza della password è uguale al numero dato dall'utente*/
         $password_length = $_GET['gen-password'];
         /*creo un ciclo do e while*/
@@ -18,8 +18,8 @@ function genPassword()
             /*creo una variabile per i caratteri che vengono generati*/
             /*con rand prendo tot caratteri da 0 alla lunghezza dei legi - 1 */
             $random_characters = $legit_characters[rand(0, strlen($legit_characters) - 1)];
-            /*richiamo con echo il random_caracters altrimenti non esiste..*/
-            echo $random_characters;
+            /*..*/
+            $gen_password .= $random_characters;
             /*incremento il valore di 1 fin quando non raggiunge il massimo */
             $i++;
             /*la condizione è che il ciclo funzioni fin quando non è minore o uguale al valore dato dall'utente*/

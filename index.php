@@ -7,9 +7,9 @@ $gen_password = '';
 /* Primo step, ricevere il numero. */
 if (isset($_GET["gen-password"])) {
 
-    /* session_start(); */
+    /*   session_start(); */
     $gen_password = genPassword();
-    header('Location: ./password.php');
+    /* header('Location: ./password.php'); */
 }
 
 ?>
@@ -46,7 +46,7 @@ if (isset($_GET["gen-password"])) {
             </div>
         </form>
         <div class="container">
-            <?php echo $gen_password ?>
+            <?php echo $gen_password; ?>
         </div>
     </div>
 </body>

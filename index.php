@@ -1,6 +1,10 @@
 <!-- PHP -->
-<?php ?>
+<?php
+/* Primo step, ricevere il numero. */
+$user_numb = $_GET["user-numb"];
 
+/* Creo una funzione che in base al numero mi genera una password...*/
+?>
 
 <!-- HTML -->
 <!DOCTYPE html>
@@ -23,17 +27,20 @@
     <!-- Per ogni hotel in hotels (hotels as hotel) stampa il suo name, description, parking, vote, distance_to_center. -->
     <div class="container mt-5 ">
         <!-- INPUT BONUS 1 -->
-        <form method="GET">
+        <form method="GET" action="index.php">
             <div>Scegli da 6 a 15 per generare la tua password! </div>
             <div class="input-group mt-3">
-                <input type="text" class="form-control" placeholder="Number of characters.."
-                    aria-label="Recipient's username" aria-describedby="button-addon2">
+                <input type="text" name="user-numb" id="user-numb" class="form-control"
+                    placeholder="Number of characters.." aria-label="Recipient's username"
+                    aria-describedby="button-addon2">
                 <button class="btn bg-danger text-light" type="button" id="button-addon2">Button</button>
             </div>
         </form>
     </div>
     <!-- Password Generata (potrei mettere un alert) -->
-    <div></div>
+    <div>
+        <?php echo $user_numb; ?>
+    </div>
 </body>
 
 </html>

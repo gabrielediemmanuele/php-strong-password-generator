@@ -1,3 +1,8 @@
+<!-- PHP -->
+<?php ?>
+
+
+<!-- HTML -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,14 +24,16 @@
     <div class="container mt-5 ">
         <!-- INPUT BONUS 1 -->
         <form method="GET">
-            <div class="input-group mb-3">
-                <span>Scegli da 6 a 15 per generare la tua password! </span>
+            <div>Scegli da 6 a 15 per generare la tua password! </div>
+            <div class="input-group mt-3">
                 <input type="text" class="form-control" placeholder="Number of characters.."
                     aria-label="Recipient's username" aria-describedby="button-addon2">
                 <button class="btn bg-danger text-light" type="button" id="button-addon2">Button</button>
             </div>
         </form>
     </div>
+    <!-- Password Generata (potrei mettere un alert) -->
+    <div></div>
 </body>
 
 </html>

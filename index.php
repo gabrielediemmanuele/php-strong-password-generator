@@ -6,10 +6,11 @@ include __DIR__ . '/functions.php';
 $gen_password = '';
 /* Primo step, ricevere il numero. */
 if (isset($_GET["gen-password"])) {
-
-    /*   session_start(); */
-    $gen_password = genPassword();
-    /* header('Location: ./password.php'); */
+    /* Avvio la sessione  */
+    session_start();
+    /*creo la sessione e l header per collegarmi a password.php*/
+    $_SESSION['gen_password'] = genPassword();
+    header('Location: ./password.php');
 }
 
 ?>
@@ -45,9 +46,6 @@ if (isset($_GET["gen-password"])) {
                 <button class="btn bg-warning text-dark" type="reset">Reset</button>
             </div>
         </form>
-        <div class="container">
-            <?php echo $gen_password; ?>
-        </div>
     </div>
 </body>
 

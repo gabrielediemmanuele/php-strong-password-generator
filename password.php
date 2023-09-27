@@ -1,3 +1,11 @@
+<?php
+/*chiamo la sessione*/
+session_start();
+/*mi aggancio a gen_password*/
+$_SESSION['gen_password'];
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +25,12 @@
 <body>
     <div class="container mt-5">
         <h2 class="text-success">Ecco la tua password!</h2>
-        <p></p>
+        <div class="container">
+            <!--Richiamo gen_password -->
+            <div class="alert alert-success" role="alert">
+                <?php echo $_SESSION['gen_password']; ?>
+            </div>
+        </div>
     </div>
 </body>
 

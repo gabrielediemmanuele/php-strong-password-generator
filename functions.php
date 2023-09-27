@@ -18,7 +18,7 @@ function genPassword()
             /*creo una variabile per i caratteri che vengono generati*/
             /*con rand prendo tot caratteri da 0 alla lunghezza dei legi - 1 */
             $random_characters = $legit_characters[rand(0, strlen($legit_characters) - 1)];
-            /*..*/
+            /*gen_password adesso è uguale alle lettere generate */
             $gen_password .= $random_characters;
             /*incremento il valore di 1 fin quando non raggiunge il massimo */
             $i++;

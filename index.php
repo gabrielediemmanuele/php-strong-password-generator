@@ -1,7 +1,30 @@
 <!-- PHP -->
 <?php
+$gen_password = '';
 /* Primo step, ricevere il numero. */
-$user_numb = $_GET["user-numb"];
+if (isset($_GET["gen-password"])) {
+    $gen_password = genPassword();
+}
+
+/*Funzione per generare la Password */
+function genPassword()
+{
+    /*creo una variabile > stringa con tutti i caratteri ammessi */
+    $legit_characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!()-.?[]_~!:;@$%^&*+=';
+    /*creo una variabile che racchiuda i caratteri generati */
+    $gen_password = '';
+    $i = 1;
+
+    if (isset($_GET['gen-password'])) {
+        $password_length = $_GET['gen-password'];
+        do {
+            $random_characters = $legit_characters[rand(0, strlen($legit_characters) - 1)];
+            echo $random_characters;
+            $i++;
+        } while ($i <= $password_length);
+    }
+    return $gen_password;
+}
 
 /* Creo una funzione che in base al numero mi genera una password...*/
 ?>
@@ -30,17 +53,18 @@ $user_numb = $_GET["user-numb"];
         <form method="GET" action="index.php">
             <div>Scegli da 6 a 15 per generare la tua password! </div>
             <div class="input-group mt-3">
-                <input type="text" name="user-numb" id="user-numb" class="form-control"
+                <input type="text" name="gen-password" id="gen-password" class="form-control"
                     placeholder="Number of characters.." aria-label="Recipient's username"
                     aria-describedby="button-addon2">
-                <button class="btn bg-danger text-light" type="button" id="button-addon2">Button</button>
+                <button class="btn bg-danger text-light" type="submit" id="button-addon2">Generate</button>
+                <button class="btn bg-warning text-dark" type="reset">Reset</button>
             </div>
         </form>
+        <div class="container">
+            <?php echo $gen_password ?>
+        </div>
     </div>
     <!-- Password Generata (potrei mettere un alert) -->
-    <div>
-        <?php echo $user_numb; ?>
-    </div>
 </body>
 
 </html>

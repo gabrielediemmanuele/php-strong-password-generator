@@ -2,7 +2,6 @@
 /*chiamo la sessione*/
 session_start();
 /*mi aggancio a gen_password*/
-$_SESSION['gen_password'];
 ?>
 
 

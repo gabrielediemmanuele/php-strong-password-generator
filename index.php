@@ -40,7 +40,7 @@ if (isset($_GET["gen-password"])) {
             <h1 class="text-success mb-5">PHP Strong Password Generator</h1>
             <div>Scegli da 6 a 15 per generare la tua password! </div>
             <div class="input-group mt-3">
-                <input type="text" name="gen-password" id="gen-password" class="form-control"
+                <input type="number" name="gen-password" id="gen-password" class="form-control"
                     placeholder="Number of characters.." aria-label="Recipient's username"
                     aria-describedby="button-addon2" min="6" max="15" required>
                 <button class="btn bg-success text-light" type="submit" id="button-addon2">Generate</button>
